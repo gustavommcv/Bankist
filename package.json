@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "sass": "^1.78.0"
+  },
+  "name": "bankist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-sass": "sass source/stylesheets/index.scss build/stylesheets/index.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
