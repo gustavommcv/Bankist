@@ -159,7 +159,7 @@ body {
   margin-top: 0;
   margin-left: 2rem;
   padding: 3rem;
-  height: 14rem;
+  height: 15rem;
   border-radius: 5px;
   color: var(--color-dark-grey-2);
   box-shadow: var(--box-shadow-small);
@@ -177,7 +177,7 @@ body {
   margin-bottom: 2rem;
 }
 .transactions .transaction__title {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 1.5rem;
 }
 .transactions .transaction__inputs {
@@ -232,12 +232,12 @@ body {
   flex-basis: 57rem;
   font-size: 1.4rem;
   min-width: 45rem;
-  max-height: 46rem;
+  max-height: 48.9rem;
   overflow-y: scroll;
   box-shadow: var(--box-shadow-small);
 }
 .movements__row {
-  padding: 3rem;
+  padding: 3.5rem;
   display: flex;
   flex: 0 0 auto;
   flex-direction: row;
