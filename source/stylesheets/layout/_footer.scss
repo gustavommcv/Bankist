@@ -1,0 +1,42 @@
+.footer {
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 105rem;
+    background-color: inherit;
+    display: flex;
+    font-size: 1.5rem;
+    align-items: baseline;
+}
+
+.summary {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .9rem;
+    flex-basis: 57rem;
+    min-width: 450px;
+
+    &__value {
+        font-size: 2.5rem;
+
+        &--in, &--interest {
+            color: darken(#99E05E, 18) ;
+        }
+
+        &--out {
+            color: darken($color: #FE575F, $amount: 10);
+        }
+    }
+}
+
+.logout-timer {
+    font-size: 1.3rem;
+    min-width: 236px;
+    flex-basis: 45rem;
+    text-align: end;
+    text-wrap: nowrap;
+}
+
+.timer {
+    font-weight: bolder;
+}

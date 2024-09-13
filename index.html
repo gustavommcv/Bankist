@@ -39,19 +39,19 @@
         <section class="main__app">
             <div class="movements">
                 <div class="movements__row">
-                    <div class="movements__type">8 deposit</div>
+                    <div class="movements__type movements__type--deposit">8 deposit</div>
                     <div class="movements__date">12/03/2020</div>
                     <div class="movements__value">1300,00</div>
                 </div>
 
                 <div class="movements__row">
-                    <div class="movements__type">7 deposit</div>
+                    <div class="movements__type movements__type--deposit">7 deposit</div>
                     <div class="movements__date">08/03/2020</div>
                     <div class="movements__value">79,97</div>
                 </div>
 
                 <div class="movements__row">
-                    <div class="movements__type">6 withdrawal</div>
+                    <div class="movements__type movements__type--withdrawal">6 withdrawal</div>
                     <div class="movements__date">23/12/2020</div>
                     <div class="movements__value">133,90</div>
                 </div>
@@ -66,8 +66,8 @@
                         <input type="number" name="transfer-amount" id="transfer-amount">
                         <button class="button transactions__submit-button" form="header__login-form" type="submit">&rarr;</button>
                         
-                        <span class="tranfer">Amount</span>
                         <span class="transfer">Transfer to</span>
+                        <span class="tranfer">Amount</span>
                     </form>
                 </div>
             
@@ -96,9 +96,20 @@
                 </div>
             </div>
         </section>
-
-        
-        
     </main>
+
+    <footer class="footer">
+        <div class="summary">
+            <p class="summary__label">In</p>
+            <p class="summary__value summary__value--in">0000€</p>
+            <p class="summary__label">Out</p>
+            <p class="summary__value summary__value--out">0000€</p>
+            <p class="summary__label">Interest</p>
+            <p class="summary__value summary__value--interest">0000€</p>
+            <button class="button--sort">↓ SORT</button>
+        </div>
+
+        <p class="logout-timer">You will be logged out in <span class="timer">05:00</span></p>
+    </footer>
 </body>
 </html>

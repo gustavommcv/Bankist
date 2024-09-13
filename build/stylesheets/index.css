@@ -75,6 +75,46 @@ body {
   outline: none;
 }
 
+.footer {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 105rem;
+  background-color: inherit;
+  display: flex;
+  font-size: 1.5rem;
+  align-items: baseline;
+}
+
+.summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.9rem;
+  flex-basis: 57rem;
+  min-width: 450px;
+}
+.summary__value {
+  font-size: 2.5rem;
+}
+.summary__value--in, .summary__value--interest {
+  color: #6abe25;
+}
+.summary__value--out {
+  color: #fe242f;
+}
+
+.logout-timer {
+  font-size: 1.3rem;
+  min-width: 236px;
+  flex-basis: 45rem;
+  text-align: end;
+  text-wrap: nowrap;
+}
+
+.timer {
+  font-weight: bolder;
+}
+
 .main {
   margin: 0 auto;
   padding: 2rem;
@@ -155,6 +195,7 @@ body {
   text-align: center;
   border: none;
   border-radius: 5px;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.487);
 }
 .transactions .transaction__inputs span {
@@ -176,6 +217,11 @@ body {
   border-radius: 5px;
 }
 
+.button--sort {
+  border: none;
+  background-color: transparent;
+}
+
 .movements {
   background-color: white;
   display: flex;
@@ -183,6 +229,7 @@ body {
   border-radius: 5px;
   flex-basis: 57rem;
   font-size: 1.4rem;
+  min-width: 450px;
 }
 .movements__row {
   padding: 3rem;
@@ -196,11 +243,17 @@ body {
 }
 .movements__type {
   text-transform: uppercase;
-  background-color: red;
-  padding: 0.2rem 0.9rem;
+  padding: 0.02rem 0.9rem;
   color: rgb(237, 237, 237);
   border-radius: 50px;
+  font-size: 1.2rem;
   font-weight: 500;
+}
+.movements__type--deposit {
+  background-image: linear-gradient(to bottom right, var(--color-green-light), var(--color-green-dark));
+}
+.movements__type--withdrawal {
+  background-image: linear-gradient(to bottom right, var(--color-red-light), var(--color-red-dark));
 }
 .movements__date {
   font-size: 1.2rem;

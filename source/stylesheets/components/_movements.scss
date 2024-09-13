@@ -5,6 +5,7 @@
     border-radius: 5px;
     flex-basis: 57rem;
     font-size: 1.4rem;
+    min-width: 450px;
 
     &__row {
         padding: 3rem;
@@ -20,11 +21,19 @@
 
     &__type {
         text-transform: uppercase;
-        background-color: red;
-        padding: .2rem .9rem;
+        padding: .02rem .9rem;
         color: rgb(237, 237, 237);
         border-radius: 50px;
+        font-size: 1.2rem;
         font-weight: 500;
+
+        &--deposit {
+            background-image: linear-gradient(to bottom right, var(--color-green-light), var(--color-green-dark));
+        }
+        
+        &--withdrawal {
+            background-image: linear-gradient(to bottom right, var(--color-red-light), var(--color-red-dark));
+        }
     }
 
     &__date {
