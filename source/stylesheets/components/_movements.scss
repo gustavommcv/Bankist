@@ -5,13 +5,16 @@
     border-radius: 5px;
     flex-basis: 57rem;
     font-size: 1.4rem;
-    min-width: 450px;
+    min-width: 45rem;
+    max-height: 46rem;
+    overflow-y: scroll;
+
+    box-shadow: var(--box-shadow-small);
 
     &__row {
         padding: 3rem;
         display: flex;
-        flex-grow: 0;
-        flex-shrink: 0;
+        flex: 0 0 auto;
         flex-direction: row;
         align-items: center;
 
@@ -51,6 +54,4 @@
             content: " €";
         }
     }
-
-
 }

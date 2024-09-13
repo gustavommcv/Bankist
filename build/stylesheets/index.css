@@ -30,7 +30,8 @@ body {
   --color-green-dark: #3DB583;
   --color-red-light: #FE575F;
   --color-red-dark: #E62C5A;
-  --border-bottom-light: 1px solid rgba(0,0,0,.09) ;
+  --border-bottom-light: 1px solid rgba(0,0,0,.09);
+  --box-shadow-small: 0 .1rem .5rem rgba(0, 0, 0, 0.200);
 }
 
 .header {
@@ -161,6 +162,7 @@ body {
   height: 14rem;
   border-radius: 5px;
   color: var(--color-dark-grey-2);
+  box-shadow: var(--box-shadow-small);
 }
 .transactions .transaction--transfer {
   background-image: linear-gradient(to bottom right, var(--color-yellow-light), var(--color-yellow-dark));
@@ -229,13 +231,15 @@ body {
   border-radius: 5px;
   flex-basis: 57rem;
   font-size: 1.4rem;
-  min-width: 450px;
+  min-width: 45rem;
+  max-height: 46rem;
+  overflow-y: scroll;
+  box-shadow: var(--box-shadow-small);
 }
 .movements__row {
   padding: 3rem;
   display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
+  flex: 0 0 auto;
   flex-direction: row;
   align-items: center;
   border-bottom: var(--border-bottom-light);
