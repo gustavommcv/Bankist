@@ -15,4 +15,9 @@
 .button--sort {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--color-light-grey-3);
+    }
 }

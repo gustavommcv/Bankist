@@ -231,6 +231,10 @@ body {
 .button--sort {
   border: none;
   background-color: transparent;
+  cursor: pointer;
+}
+.button--sort:hover {
+  color: var(--color-light-grey-3);
 }
 
 .movements {
