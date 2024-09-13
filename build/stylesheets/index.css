@@ -90,9 +90,17 @@ body {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 0.9rem;
   flex-basis: 57rem;
   min-width: 450px;
+}
+.summary__info {
+  text-wrap: nowrap;
+}
+.summary__info p {
+  display: inline-block;
+}
+.summary__info p:not(:last-child) {
+  margin-right: 5px;
 }
 .summary__value {
   font-size: 2.5rem;
@@ -105,6 +113,7 @@ body {
 }
 
 .logout-timer {
+  color: var(--color-dark-grey);
   font-size: 1.3rem;
   min-width: 236px;
   flex-basis: 45rem;

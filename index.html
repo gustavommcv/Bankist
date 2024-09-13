@@ -104,20 +104,20 @@
                 <div class="transaction transaction--loan">
                     <h3 class="transaction__title">Request loan</h3>
                     <form class="transaction__inputs transaction__inputs-2" action="">
-                        <input type="text" name="transfer-to" id="transfer-to">
+                        <input type="number" name="loan" id="loan">
                         
                         <button class="button transactions__submit-button" form="header__login-form" type="submit">&rarr;</button>
                         
-                        <span class="tranfer">Amount</span>
+                        <span class="loan">Amount</span>
                     </form>
                 </div>
 
                 <div class="transaction transaction--close-account">
                     <h3 class="transaction__title">Close account</h3>
                     <form class="transaction__inputs transaction__inputs-3" action="">
-                        <input type="text" name="transfer-to" id="transfer-to">
+                        <input type="text" name="close-account-user" id="close-account-user">
                         
-                        <input type="number" name="transfer-amount" id="transfer-amount">
+                        <input type="password" name="close-account-passw" id="close-account-passw">
                         <button class="button transactions__submit-button" form="header__login-form" type="submit">&rarr;</button>
                         
                         <span class="tranfer">Confirm user</span>
@@ -130,12 +130,14 @@
 
     <footer class="footer">
         <div class="summary">
-            <p class="summary__label">In</p>
-            <p class="summary__value summary__value--in">0000€</p>
-            <p class="summary__label">Out</p>
-            <p class="summary__value summary__value--out">0000€</p>
-            <p class="summary__label">Interest</p>
-            <p class="summary__value summary__value--interest">0000€</p>
+            <div class="summary__info">
+                <p class="summary__label">In</p>
+                <p class="summary__value summary__value--in">0000€</p>
+                <p class="summary__label">Out</p>
+                <p class="summary__value summary__value--out">0000€</p>
+                <p class="summary__label">Interest</p>
+                <p class="summary__value summary__value--interest">0000€</p>
+            </div>
             <button class="button--sort">↓ SORT</button>
         </div>
 
