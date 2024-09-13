@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 html {
   font-size: 62.5%;
@@ -5,6 +6,9 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-background);
 }
 
 * {
@@ -16,7 +20,16 @@ body {
 :root {
   --color-light-grey: #F3F3F3;
   --color-light-grey-2: #9d9c9c;
+  --color-light-grey-3: #717171;
+  --color-background: #F3F3F3;
   --color-dark-grey: #444444;
+  --color-dark-grey-2: #393939;
+  --color-yellow-light: #FFCB03;
+  --color-yellow-dark: #FFB103;
+  --color-green-light: #99E05E;
+  --color-green-dark: #3DB583;
+  --color-red-light: #FE575F;
+  --color-red-dark: #E62C5A;
   --border-bottom-light: 1px solid rgba(0,0,0,.09) ;
 }
 
@@ -25,8 +38,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-light-grey);
-  padding: 2rem;
-  border-bottom: var(--border-bottom-light);
+  padding: 2rem 3rem;
 }
 .header__login-message {
   font-size: 2rem;
@@ -62,11 +74,146 @@ body {
   box-shadow: 0 0 0 1px var(--color-light-grey-2);
   outline: none;
 }
-.header__submit-button {
-  border: none;
-  background-color: transparent;
+
+.main {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 105rem;
+  background-color: inherit;
+}
+.main__current-balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+  margin-bottom: 3rem;
+}
+.main__current-balance-text {
+  display: flex;
+  flex-direction: column;
   font-size: 2rem;
-  margin: 0 1rem;
+  font-weight: 600;
+  color: var(--color-dark-grey);
+}
+.main__current-balance-date {
+  font-size: 1.4rem;
+  color: var(--color-light-grey-2);
+}
+.main__current-balance-amount {
+  font-size: 4rem;
+  font-weight: 500;
+  color: var(--color-dark-grey);
+}
+.main__app {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transactions {
+  display: flex;
+  flex-basis: 45rem;
+  flex-direction: column;
+}
+.transactions .transaction {
+  margin-top: 0;
+  margin-left: 2rem;
+  padding: 3rem;
+  height: 14rem;
+  border-radius: 5px;
+  color: var(--color-dark-grey-2);
+}
+.transactions .transaction--transfer {
+  background-image: linear-gradient(to bottom right, var(--color-yellow-light), var(--color-yellow-dark));
+}
+.transactions .transaction--loan {
+  background-image: linear-gradient(to bottom right, var(--color-green-light), var(--color-green-dark));
+}
+.transactions .transaction--close-account {
+  background-image: linear-gradient(to bottom right, var(--color-red-light), var(--color-red-dark));
+}
+.transactions .transaction:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.transactions .transaction__title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.transactions .transaction__inputs {
+  display: grid;
+  grid-column-gap: 7px;
+  grid-row-gap: 5px;
+}
+.transactions .transaction__inputs-3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.transactions .transaction__inputs-2 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.transactions .transaction__inputs input {
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.487);
+}
+.transactions .transaction__inputs span {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.button {
+  border: none;
+  font-size: 2rem;
+  width: 5rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.transactions__submit-button {
+  background-color: white;
+  padding: 0.1rem 1.55rem 0.4rem 1.5rem;
+  border-radius: 5px;
+}
+
+.movements {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  flex-basis: 57rem;
+  font-size: 1.4rem;
+}
+.movements__row {
+  padding: 3rem;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: var(--border-bottom-light);
+  height: 5rem;
+}
+.movements__type {
+  text-transform: uppercase;
+  background-color: red;
+  padding: 0.2rem 0.9rem;
+  color: rgb(237, 237, 237);
+  border-radius: 50px;
+  font-weight: 500;
+}
+.movements__date {
+  font-size: 1.2rem;
+  color: var(--color-light-grey-3);
+  font-weight: 500;
+  margin-right: auto;
+  margin-left: 2rem;
+}
+.movements__value {
+  font-size: 1.5rem;
+}
+.movements__value::after {
+  content: " €";
 }
 
 /*# sourceMappingURL=index.css.map */

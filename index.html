@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bankist</title>
     <link rel="stylesheet" href="build/stylesheets/index.css">
+    <link rel="shortcut icon" href="build/stylesheets/img/icon.png" type="image/x-icon">
 </head>
 <body>
     <header class="header">
@@ -17,8 +18,87 @@
                 <input class="header__form-input" type="text" name="user" id="user" placeholder="User">
                 <input class="header__form-input" type="password" name="pin" id="pin" placeholder="PIN">
             </form>
-            <button class="header__submit-button" form="header__login-form" type="submit">&rarr;</button>
+            <button class="button header__submit-button" form="header__login-form" type="submit">&rarr;</button>
         </div>
     </header>
+
+    <main class="main">
+        <header class="main__current-balance">
+            <p class="main__current-balance-text">
+                Current balance
+                <span class="main__current-balance-date">
+                    As of 05/03/2037
+                </span>
+            </p>
+
+            <p class="main__current-balance-amount">
+                0000€
+            </p>
+        </header>
+
+        <section class="main__app">
+            <div class="movements">
+                <div class="movements__row">
+                    <div class="movements__type">8 deposit</div>
+                    <div class="movements__date">12/03/2020</div>
+                    <div class="movements__value">1300,00</div>
+                </div>
+
+                <div class="movements__row">
+                    <div class="movements__type">7 deposit</div>
+                    <div class="movements__date">08/03/2020</div>
+                    <div class="movements__value">79,97</div>
+                </div>
+
+                <div class="movements__row">
+                    <div class="movements__type">6 withdrawal</div>
+                    <div class="movements__date">23/12/2020</div>
+                    <div class="movements__value">133,90</div>
+                </div>
+            </div>
+
+            <div class="transactions">
+                <div class="transaction transaction--transfer">
+                    <h3 class="transaction__title">Transfer Money</h3>
+                    <form class="transaction__inputs transaction__inputs-3" action="">
+                        <input type="text" name="transfer-to" id="transfer-to">
+                        
+                        <input type="number" name="transfer-amount" id="transfer-amount">
+                        <button class="button transactions__submit-button" form="header__login-form" type="submit">&rarr;</button>
+                        
+                        <span class="tranfer">Amount</span>
+                        <span class="transfer">Transfer to</span>
+                    </form>
+                </div>
+            
+                <div class="transaction transaction--loan">
+                    <h3 class="transaction__title">Request loan</h3>
+                    <form class="transaction__inputs transaction__inputs-2" action="">
+                        <input type="text" name="transfer-to" id="transfer-to">
+                        
+                        <button class="button transactions__submit-button" form="header__login-form" type="submit">&rarr;</button>
+                        
+                        <span class="tranfer">Amount</span>
+                    </form>
+                </div>
+
+                <div class="transaction transaction--close-account">
+                    <h3 class="transaction__title">Close account</h3>
+                    <form class="transaction__inputs transaction__inputs-3" action="">
+                        <input type="text" name="transfer-to" id="transfer-to">
+                        
+                        <input type="number" name="transfer-amount" id="transfer-amount">
+                        <button class="button transactions__submit-button" form="header__login-form" type="submit">&rarr;</button>
+                        
+                        <span class="tranfer">Confirm user</span>
+                        <span class="transfer">Confirm PIN</span>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        
+        
+    </main>
 </body>
 </html>

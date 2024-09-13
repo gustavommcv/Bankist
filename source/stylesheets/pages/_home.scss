@@ -1,0 +1,38 @@
+.main {
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 105rem;
+    background-color: inherit;
+
+    &__current-balance {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.2rem;
+        margin-bottom: 3rem;
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-dark-grey);
+        }
+
+        &-date {
+            font-size: 1.4rem;
+            color: var(--color-light-grey-2);
+        }
+
+        &-amount {
+            font-size: 4rem;
+            font-weight: 500;
+            color: var(--color-dark-grey);
+        }
+    }
+
+    &__app {
+        display: flex;
+        justify-content: space-between;
+    }
+}
