@@ -4,6 +4,8 @@
 /////////////////////////////////////////////////
 // BANKIST APP
 
+const containerMovements = document.querySelector('.movements');
+
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -34,6 +36,26 @@ const account4 = {
 };
 
 const accounts = [account1, account2, account3, account4];
+
+const displayMovements = function(movements) {
+  containerMovements.innerHTML = '';
+
+  movements.forEach(function (moviment, i) {
+    const type = moviment > 0 ? 'deposit' : 'withdrawal'
+
+    const html = `
+       <div class="movements__row">
+          <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+          <div class="movements__date">12/03/2020</div>
+          <div class="movements__value">${moviment}</div>
+        </div>
+    `;
+
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+}
+
+displayMovements(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
