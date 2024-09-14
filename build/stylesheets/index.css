@@ -211,6 +211,11 @@ body {
   border-radius: 5px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.487);
+  transition: background-color 0.5s;
+}
+.transactions .transaction__inputs input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.717);
 }
 .transactions .transaction__inputs span {
   text-align: center;
