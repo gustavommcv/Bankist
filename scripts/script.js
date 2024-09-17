@@ -6,6 +6,9 @@
 
 const containerMovements = document.querySelector('.movements');
 const labelBalance = document.querySelector('.main__current-balance-amount');
+const labelSumIn = document.querySelector('.summary__value--in');
+const labelSumOut = document.querySelector('.summary__value--out');
+const labelSumInt = document.querySelector('.summary__value--interest');
 
 // Data
 const account1 = {
@@ -73,10 +76,28 @@ createUsernames(accounts);
 
 const calcDisplayBalance = function(movements) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
+  labelBalance.textContent = `${balance} €`;
 }
 
 calcDisplayBalance(account1.movements);
+
+const calcDisplaySummary = function(movements) {
+  const incomes = movements.filter(m => m > 0).reduce((acc, curr) => acc + curr, 0);
+  labelSumIn.textContent = `${incomes} €`;
+
+  const outcomes = movements.filter(m => m < 0).reduce((acc, curr) => acc + curr);
+  labelSumOut.textContent = `${Math.abs(outcomes)} €`;
+
+  const interest = movements.
+  filter(mov => mov > 0).
+  map(deposit => deposit * 1.2/100).
+  filter(int => int >= 1).
+  reduce((acc, int) => acc + int, 0);
+
+  labelSumInt.textContent = `${Math.abs(interest)} €`;
+}
+
+calcDisplaySummary(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -128,4 +149,15 @@ const max = movements.reduce((acc, mov) => {
     return acc;
   }
 }, movements[0]);
-console.log(max);
+// console.log(max);
+
+// PIPELINE
+const totalDepositsUSD = movements
+.filter(mov => mov > 0)
+.map((mov, i, arr) => {
+  return mov * eurToUsd;
+})
+// .map(mov => mov * eurToUsd)
+.reduce((acc, mov) => acc + mov, 0);
+
+// console.log(totalDepositsUSD);
