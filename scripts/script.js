@@ -57,6 +57,21 @@ const displayMovements = function(movements) {
 
 displayMovements(account1.movements);
 
+const user = 'Steven Thomas Williams'; // stw
+
+const createUsernames = function(accounts) {
+  accounts.forEach(function(acc) {
+    acc.username = acc.owner.toLowerCase()
+    .split(' ')
+    .map(x => x.charAt(0))
+    .join(''); 
+  });
+}
+
+createUsernames(accounts);
+
+accounts.forEach(a => console.log(a.username));
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -79,11 +94,11 @@ const eurToUsd = 1.1;
 
 const movementsUSD = movements.map(movement => movement * eurToUsd);
 
-console.log(movements);
-console.log(movementsUSD);
+// console.log(movements);
+// console.log(movementsUSD);
 
 const movementsDescriptions = movements.map((mov, i, arr) => 
   `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(mov)}`
 );
 
-console.log(movementsDescriptions);
+// console.log(movementsDescriptions);
