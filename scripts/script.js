@@ -5,6 +5,7 @@
 // BANKIST APP
 
 const containerMovements = document.querySelector('.movements');
+const labelBalance = document.querySelector('.main__current-balance-amount');
 
 // Data
 const account1 = {
@@ -70,7 +71,12 @@ const createUsernames = function(accounts) {
 
 createUsernames(accounts);
 
-accounts.forEach(a => console.log(a.username));
+const calcDisplayBalance = function(movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+}
+
+calcDisplayBalance(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -106,6 +112,20 @@ const movementsDescriptions = movements.map((mov, i, arr) =>
 const deposits = movements.filter(m => m > 0);
 const withdrawals = movements.filter(m => m < 0);
 
-console.log(deposits);
-console.log(withdrawals);
-console.log(movements);
+// console.log(deposits);
+// console.log(withdrawals);
+// console.log(movements);
+
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   return acc + cur;
+// }, 0);
+// console.log(balance);
+
+const max = movements.reduce((acc, mov) => {
+  if (mov > acc) {
+    return mov;
+  } else {
+    return acc;
+  }
+}, movements[0]);
+console.log(max);
