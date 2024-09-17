@@ -102,3 +102,10 @@ const movementsDescriptions = movements.map((mov, i, arr) =>
 );
 
 // console.log(movementsDescriptions);
+
+const deposits = movements.filter(m => m > 0);
+const withdrawals = movements.filter(m => m < 0);
+
+console.log(deposits);
+console.log(withdrawals);
+console.log(movements);
