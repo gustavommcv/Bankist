@@ -10,18 +10,18 @@
 <body>
     <header class="header">
         <p class="header__login-message">Log in to get started</p>
-
+    
         <img src="build/stylesheets/img/small-logo.png" alt="Logo" class="header__logo">
-
+    
         <div class="header__login-container">
             <form class="header__login-form" action="" method="get">
-                <input class="header__form-input" type="text" name="user" id="user" placeholder="User">
-                <input class="header__form-input" type="password" name="pin" id="pin" placeholder="PIN">
+                <input class="header__form-input header__form-input--username" type="text" name="user" id="user" placeholder="User">
+                <input class="header__form-input header__form-input--pin" type="password" name="pin" id="pin" placeholder="PIN">
+                <button class="button header__submit-button" type="submit">&rarr;</button>
             </form>
-            <button class="button header__submit-button" form="header__login-form" type="submit">&rarr;</button>
         </div>
     </header>
-
+    
     <main class="main">
         <header class="main__current-balance">
             <p class="main__current-balance-text">

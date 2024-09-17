@@ -84,6 +84,7 @@ body {
   display: flex;
   font-size: 1.5rem;
   align-items: baseline;
+  opacity: 0;
   transition: opacity 0.8s;
 }
 
@@ -131,6 +132,7 @@ body {
   padding: 2rem;
   max-width: 105rem;
   background-color: inherit;
+  opacity: 0;
   transition: opacity 0.8s;
 }
 .main__current-balance {
