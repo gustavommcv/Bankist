@@ -55,10 +55,10 @@
                 <div class="transaction transaction--transfer">
                     <h3 class="transaction__title">Transfer Money</h3>
                     <form class="transaction__inputs transaction__inputs-3" action="">
-                        <input type="text" name="transfer-to" id="transfer-to">
+                        <input class="form__input--to" type="text" name="transfer-to" id="transfer-to">
                         
-                        <input type="number" name="transfer-amount" id="transfer-amount">
-                        <button class="button transactions__submit-button" form="header__login-form" type="submit">&rarr;</button>
+                        <input class="form__input--amount" type="number" name="transfer-amount" id="transfer-amount">
+                        <button class="button transactions__submit-button transactions__submit-button--transfer" form="transaction__inputs-3" type="submit">&rarr;</button>
                         
                         <span class="transfer">Transfer to</span>
                         <span class="tranfer">Amount</span>
@@ -68,7 +68,7 @@
                 <div class="transaction transaction--loan">
                     <h3 class="transaction__title">Request loan</h3>
                     <form class="transaction__inputs transaction__inputs-2" action="">
-                        <input type="number" name="loan" id="loan">
+                        <input class="form__input--loan-amount" type="number" name="loan" id="loan">
                         
                         <button class="button transactions__submit-button" form="header__login-form" type="submit">&rarr;</button>
                         
@@ -79,9 +79,9 @@
                 <div class="transaction transaction--close-account">
                     <h3 class="transaction__title">Close account</h3>
                     <form class="transaction__inputs transaction__inputs-3" action="">
-                        <input type="text" name="close-account-user" id="close-account-user">
+                        <input class="form__input--user" type="text" name="close-account-user" id="close-account-user">
                         
-                        <input type="password" name="close-account-passw" id="close-account-passw">
+                        <input class="form__input--pin" type="password" name="close-account-passw" id="close-account-passw">
                         <button class="button transactions__submit-button" form="header__login-form" type="submit">&rarr;</button>
                         
                         <span class="tranfer">Confirm user</span>
