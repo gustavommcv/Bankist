@@ -22,6 +22,10 @@ const btnTransfer = document.querySelector('.transactions__submit-button--transf
 const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputTransferTo = document.querySelector('.form__input--to');
 
+const btnCloseAccount = document.querySelector('.transactions__submit-button--account');
+const inputCloseUser = document.querySelector('.form__input--user');
+const inputClosePin = document.querySelector('.form__input--pin');
+
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -126,7 +130,6 @@ buttonLogin.addEventListener('click', function(event) {
   // console.log('LOGIN')
 
   currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
-  console.log(currentAccount);
 
   if(currentAccount?.pin === Number(inputLoginPIN.value)) {
     // Display UI and message
@@ -160,6 +163,23 @@ btnTransfer.addEventListener('click', function(e) {
 
     // Update UI
     updateUI(currentAccount);
+  }
+});
+
+btnCloseAccount.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  if (currentAccount.pin == inputClosePin.value && currentAccount.username == inputCloseUser.value) {
+    const index = accounts.findIndex(acc => acc.username === currentAccount.username);
+
+    accounts.splice(index, 1);
+
+    inputClosePin.value = inputCloseUser.value = '';
+    inputClosePin.blur();
+    inputCloseUser.blur();
+
+    main.style.opacity = 0;
+    footer.style.opacity = 0;
   }
 })
 
