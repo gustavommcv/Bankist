@@ -26,6 +26,9 @@ const btnCloseAccount = document.querySelector('.transactions__submit-button--ac
 const inputCloseUser = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const btnLoan = document.querySelector('.transactions__submit-button--loan');
+const inputLoan = document.querySelector('.form__input--loan-amount');
+
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -166,6 +169,23 @@ btnTransfer.addEventListener('click', function(e) {
   }
 });
 
+btnLoan.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoan.value);
+
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // Add movement
+    currentAccount.movements.push(amount);
+
+    // Update UI
+    updateUI(currentAccount);
+  }
+
+  inputLoan.value = '';
+  inputLoan.blur();
+});
+
 btnCloseAccount.addEventListener('click', function(e) {
   e.preventDefault();
 
@@ -250,6 +270,25 @@ const firstWithDrawal = movements.find(mov => mov < 0);
 // console.log(movements);
 // console.log(firstWithDrawal);
 
+// Separate callback
+const deposit = mov => mov > 0;
+
 // console.log(accounts);
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 // console.log(account)
+
+// console.log(movements);
+
+// SOME
+
+// EQUALITY
+// console.log(movements.includes(-130));
+
+// CONDITION
+const anyDeposits = movements.some(deposit);
+
+// console.log(anyDeposits);
+
+// EVERY
+// console.log(account4.movements.every(deposit));
+
