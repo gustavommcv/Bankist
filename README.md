@@ -18,13 +18,13 @@ Use the following credentials to log in:
   - Username: `jd`  
   - PIN: `2222`
 
-- **Steven Thomas Williams**  
+<!-- - **Steven Thomas Williams**  
   - Username: `stw`  
   - PIN: `3333`
 
 - **Sarah Smith**  
   - Username: `ss`  
-  - PIN: `4444`
+  - PIN: `4444` -->
 
 ### Course Information
 
