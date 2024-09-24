@@ -197,6 +197,8 @@ btnCloseAccount.addEventListener('click', function(e) {
   if (currentAccount.pin == inputClosePin.value && currentAccount.username == inputCloseUser.value) {
     const index = accounts.findIndex(acc => acc.username === currentAccount.username);
 
+    labelWelcome.textContent = 'Log in to get started';
+
     accounts.splice(index, 1);
 
     inputClosePin.value = inputCloseUser.value = '';
@@ -341,3 +343,30 @@ const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
 //   if (b > a) return 1;
 // }))
 // console.log(movements.sort((a, b) => b - a));
+
+// Empty arrays + fill method
+const x = new Array(7);
+// console.log(x);
+
+x.fill(1, 3, 5);
+
+// console.log(x);
+
+// Array.from
+const newArr = Array.from({length: 7}, (_, i) => i + 1);
+// console.log(newArr);
+
+const randArr = Array.from({length: 100}, () => getRandomInt(100));
+// console.log(randArr);
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+
+
+labelBalance.addEventListener('click', function() {
+  const movementsUI = Array.from(document.querySelectorAll('.movements__value'), el => Number(el.textContent.replace('€', '')));
+
+  console.log(movementsUI);
+});
