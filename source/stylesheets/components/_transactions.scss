@@ -12,6 +12,10 @@
         color: var(--color-dark-grey-2);
         box-shadow: var(--box-shadow-small);
 
+        @include respond(tablet-portrait) {
+            margin-left: 0;
+        }
+
         &--transfer {
             background-image: linear-gradient(to bottom right, var(--color-yellow-light), var(--color-yellow-dark));
         }

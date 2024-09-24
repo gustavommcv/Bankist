@@ -7,8 +7,12 @@
     font-size: 1.5rem;
     align-items: baseline;
 
-    opacity: 0;
+    // opacity: 0;
     transition: opacity .8s;
+
+    @include respond(tablet-landscape) {
+        flex-direction: column;
+    }
 }
 
 .summary {
@@ -18,9 +22,16 @@
     flex-basis: 57rem;
     min-width: 450px;
 
+    @include respond(tablet-landscape) {
+        width: 100%;
+        min-width: 0;
+        flex-basis: auto; /* Ajuste para evitar tamanho excessivo */
+        min-width: 300px; /* Diminuído para adequar melhor ao layout */
+        max-width: 100%; /* Para restringir o tamanho máximo */
+    }
+
     &__info {
         text-wrap: nowrap;
-
         p {
             display: inline-block;
 
@@ -46,10 +57,20 @@
 .logout-timer {
     color: var(--color-dark-grey);
     font-size: 1.3rem;
-    min-width: 236px;
-    flex-basis: 45rem;
+    min-width: 150px;
+    flex-basis: auto;
+    max-width: 100%;
+
+    margin-left: auto;
     text-align: end;
     text-wrap: nowrap;
+
+    @include respond(tablet-landscape) {
+        flex-basis: auto;
+        text-align: start;
+        margin-left: 0;
+        margin-top: 2rem;
+    }
 }
 
 .timer {

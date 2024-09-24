@@ -101,7 +101,7 @@ const displayMovements = function(movements, sort = false) {
        <div class="movements__row">
           <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
           <div class="movements__date">12/03/2020</div>
-          <div class="movements__value">${moviment}</div>
+          <div class="movements__value">${moviment.toFixed(2)}</div>
         </div>
     `;
 
@@ -124,26 +124,27 @@ createUsernames(accounts);
 
 const calcDisplayBalance = function(acc) {
   const balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} €`;
+  labelBalance.textContent = `${balance.toFixed(2)} €`;
 
   acc.balance = balance;
 }
 
 const calcDisplaySummary = function(acc) {
   const incomes = acc.movements.filter(m => m > 0).reduce((acc, curr) => acc + curr, 0);
-  labelSumIn.textContent = `${incomes} €`;
+  labelSumIn.textContent = `${incomes.toFixed(2)} €`;
 
   const outcomes = acc.movements.filter(m => m < 0).reduce((acc, curr) => acc + curr);
-  labelSumOut.textContent = `${Math.abs(outcomes)} €`;
+  labelSumOut.textContent = `${Math.abs(outcomes).toFixed(2)} €`;
 
-  const interest = acc.movements.
-  filter(mov => mov > 0).
-  map(deposit => deposit * acc.interestRate / 100).
-  filter(int => int >= 1).
-  reduce((acc, int) => acc + int, 0);
+  const interest = acc.movements
+    .filter(mov => mov > 0)
+    .map(deposit => deposit * acc.interestRate / 100)
+    .filter(int => int >= 1)
+    .reduce((acc, int) => acc + int, 0);
 
-  labelSumInt.textContent = `${Math.abs(interest)} €`;
-}
+  labelSumInt.textContent = `${Math.abs(interest).toFixed(2)} €`;
+};
+
 
 let currentAccount;
 

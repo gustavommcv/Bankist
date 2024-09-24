@@ -34,6 +34,24 @@ body {
   --box-shadow-small: 0 .1rem .5rem rgba(0, 0, 0, 0.200);
 }
 
+/*
+0 - 600px:   phone
+600 - 900px: tablet portrait
+900 - 1200px: tablet landscape
+[1200 - 1800]:  is where our normal styles apply
+1800px + : Big desktop
+*/
+/*
+$breakpoint arguement choices
+- phone
+- tablet-portrait
+- tablet-landscape
+- big-desktop
+
+ORDER: Base + typhography > genereal layout + grid > page layout > components
+
+1rem = 16px
+*/
 .header {
   display: flex;
   justify-content: space-between;
@@ -41,16 +59,37 @@ body {
   background-color: var(--color-light-grey);
   padding: 2rem 3rem;
 }
+@media screen and (max-width: 75em) {
+  .header {
+    justify-content: start;
+  }
+}
 .header__login-message {
   font-size: 2rem;
   font-weight: 500;
   color: var(--color-dark-grey);
 }
+@media screen and (max-width: 41.2em) {
+  .header__login-message {
+    display: none;
+  }
+}
 .header__logo {
   height: 5rem;
 }
+@media screen and (max-width: 75em) {
+  .header__logo {
+    order: -1;
+    margin-right: 1rem;
+  }
+}
 .header__login-container {
   display: flex;
+}
+@media screen and (max-width: 75em) {
+  .header__login-container {
+    margin-left: auto;
+  }
 }
 .header__login-form {
   display: flex;
@@ -83,8 +122,12 @@ body {
   display: flex;
   font-size: 1.5rem;
   align-items: baseline;
-  opacity: 0;
   transition: opacity 0.8s;
+}
+@media screen and (max-width: 75em) {
+  .footer {
+    flex-direction: column;
+  }
 }
 
 .summary {
@@ -93,6 +136,15 @@ body {
   justify-content: space-between;
   flex-basis: 57rem;
   min-width: 450px;
+}
+@media screen and (max-width: 75em) {
+  .summary {
+    width: 100%;
+    min-width: 0;
+    flex-basis: auto; /* Ajuste para evitar tamanho excessivo */
+    min-width: 300px; /* Diminuído para adequar melhor ao layout */
+    max-width: 100%; /* Para restringir o tamanho máximo */
+  }
 }
 .summary__info {
   text-wrap: nowrap;
@@ -116,10 +168,20 @@ body {
 .logout-timer {
   color: var(--color-dark-grey);
   font-size: 1.3rem;
-  min-width: 236px;
-  flex-basis: 45rem;
+  min-width: 150px;
+  flex-basis: auto;
+  max-width: 100%;
+  margin-left: auto;
   text-align: end;
   text-wrap: nowrap;
+}
+@media screen and (max-width: 75em) {
+  .logout-timer {
+    flex-basis: auto;
+    text-align: start;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
 }
 
 .timer {
@@ -131,8 +193,12 @@ body {
   padding: 2rem;
   max-width: 105rem;
   background-color: inherit;
-  opacity: 0;
   transition: opacity 0.8s;
+}
+@media screen and (max-width: 56.25em) {
+  .main__app {
+    flex-flow: column nowrap;
+  }
 }
 .main__current-balance {
   display: flex;
@@ -175,6 +241,11 @@ body {
   border-radius: 5px;
   color: var(--color-dark-grey-2);
   box-shadow: var(--box-shadow-small);
+}
+@media screen and (max-width: 56.25em) {
+  .transactions .transaction {
+    margin-left: 0;
+  }
 }
 .transactions .transaction--transfer {
   background-image: linear-gradient(to bottom right, var(--color-yellow-light), var(--color-yellow-dark));
@@ -252,10 +323,14 @@ body {
   border-radius: 5px;
   flex-basis: 57rem;
   font-size: 1.4rem;
-  min-width: 45rem;
   max-height: 48.9rem;
   overflow-y: scroll;
   box-shadow: var(--box-shadow-small);
+}
+@media screen and (max-width: 56.25em) {
+  .movements {
+    margin-bottom: 3.8rem;
+  }
 }
 .movements__row {
   padding: 3.5rem;

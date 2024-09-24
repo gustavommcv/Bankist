@@ -9,18 +9,36 @@
 
     // border-bottom: var(--border-bottom-light);
 
+    @include respond(tablet-landscape) {
+        justify-content: start;
+    }
+
     &__login-message {
         font-size: 2rem;
         font-weight: 500;
         color: var(--color-dark-grey);
+
+        @include respond(phone) {
+            display: none;
+        }
+
     }
 
     &__logo {
         height: 5rem;
+
+        @include respond(tablet-landscape) {
+            order: -1;
+            margin-right: 1rem;
+        }
     }
 
     &__login-container {
         display: flex;
+
+        @include respond(tablet-landscape) {
+            margin-left: auto;
+        }
     }
 
     &__login-form {
