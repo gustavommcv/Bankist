@@ -122,6 +122,7 @@ ORDER: Base + typhography > genereal layout + grid > page layout > components
   display: flex;
   font-size: 1.5rem;
   align-items: baseline;
+  opacity: 0;
   transition: opacity 0.8s;
 }
 @media screen and (max-width: 75em) {
@@ -193,6 +194,7 @@ ORDER: Base + typhography > genereal layout + grid > page layout > components
   padding: 2rem;
   max-width: 105rem;
   background-color: inherit;
+  opacity: 0;
   transition: opacity 0.8s;
 }
 @media screen and (max-width: 56.25em) {
