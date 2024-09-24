@@ -25,9 +25,17 @@
     @include respond(tablet-landscape) {
         width: 100%;
         min-width: 0;
-        flex-basis: auto; /* Ajuste para evitar tamanho excessivo */
-        min-width: 300px; /* Diminuído para adequar melhor ao layout */
-        max-width: 100%; /* Para restringir o tamanho máximo */
+        flex-basis: auto;
+        min-width: 300px;
+        max-width: 100%;
+    }
+
+    &__label {
+        @include respond(phone) {
+            &::after {
+                content: ':';
+            }
+        }
     }
 
     &__info {
@@ -37,6 +45,10 @@
 
             &:not(:last-child) {
                 margin-right: 5px;
+            }
+
+            @include respond(phone) {
+                display: block;
             }
         }
     }

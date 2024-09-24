@@ -142,9 +142,14 @@ ORDER: Base + typhography > genereal layout + grid > page layout > components
   .summary {
     width: 100%;
     min-width: 0;
-    flex-basis: auto; /* Ajuste para evitar tamanho excessivo */
-    min-width: 300px; /* Diminuído para adequar melhor ao layout */
-    max-width: 100%; /* Para restringir o tamanho máximo */
+    flex-basis: auto;
+    min-width: 300px;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 41.2em) {
+  .summary__label::after {
+    content: ":";
   }
 }
 .summary__info {
@@ -155,6 +160,11 @@ ORDER: Base + typhography > genereal layout + grid > page layout > components
 }
 .summary__info p:not(:last-child) {
   margin-right: 5px;
+}
+@media screen and (max-width: 41.2em) {
+  .summary__info p {
+    display: block;
+  }
 }
 .summary__value {
   font-size: 2.5rem;
