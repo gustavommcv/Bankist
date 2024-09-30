@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 html {
   font-size: 62.5%;
@@ -376,9 +375,6 @@ ORDER: Base + typhography > genereal layout + grid > page layout > components
 }
 .movements__value {
   font-size: 1.5rem;
-}
-.movements__value::after {
-  content: " €";
 }
 
 /*# sourceMappingURL=index.css.map */
