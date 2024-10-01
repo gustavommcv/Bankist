@@ -184,7 +184,7 @@ const calcDisplaySummary = function(acc) {
 
 const startLogOutTimer = function() {
   // Set time to 5 minutes
-  let time = 50;
+  let time = 50 * 6;
 
   const tick = function() {
     const min = String(Math.trunc(time / 60)).padStart(2, '0');
